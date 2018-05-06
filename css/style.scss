@@ -1,0 +1,230 @@
+@import "normalize";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$colorResalte: #51adcf;
+$colorAlt: #0278ae;
+$colorText: #c8ffa7;
+$colorResult: #4eff00;
+$colorBtn: #f12b6b;
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+	display: block;
+	width: 100%;
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #00698a;
+	background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23d5d5d5' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+	min-height: 100vh;
+}
+
+.container {
+	display: block;
+	width: 100%;
+	max-width: 1024px;
+	min-height: 100vh;
+	margin: 0 auto;
+
+	// position: absolute;
+	// top: 50%;
+	// left: 50%;
+	// transform: translate(-50%, -50%);
+}
+
+.iconWiki {
+	display: block;
+	width: 80px;
+	height: 80px;
+	background: lighten($colorResalte, 30%);
+	margin: 1em auto 0;
+	padding: 15px;
+	border-radius: 100%;
+	border: 5px solid $colorResalte;
+
+	svg, svg path {
+		display: block;
+		width: 80px;
+		height: 80px;
+		margin: 0 auto;
+	}
+}
+
+h2 {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 0.5em 0;
+
+	color: $colorText;
+	font-size: 1.6em;
+	font-weight: 800;
+
+	span {
+		color: lighten($colorText, 15%);
+	}
+}
+
+.language-selection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+
+	width: 100%;
+	max-width: 450px;
+	margin: 1em auto;
+
+	li {
+		display: block;
+		background: $colorResalte;
+		border: 2px solid #fff;
+		border-radius: 10px;
+		color: #fff;
+
+		font-size: 1.2em;
+		text-shadow: 2px 2px 10px #000;
+		padding: 0.5em;
+		cursor: pointer;
+
+		@media(min-width: 550px) {
+			padding: 1em;
+		}
+	}
+}
+
+.search-contain, .result-contain {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 95%;
+	margin: 0 auto;
+
+	#search-value {
+		display: block;
+		width: 100%;
+		border: none;
+		text-align: center;
+		font-size: 1.4em;
+		padding: 0.5em 0;
+		background: lighten($colorResalte, 40%);
+		border-radius: 5px;
+	}
+
+	.btn-result {
+		display: block;
+		width: 48%;
+		background: $colorBtn;
+
+		font-size: 1.2em;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		margin-top: 10px;
+		border-radius: 5px;
+
+		padding: 0.5em 0;
+		cursor: pointer;
+	}
+
+	#random-btn {
+		background: lighten($colorBtn, 25%);
+	}
+}
+
+.search-contain {
+	max-width: 450px;
+}
+
+.result-contain {
+	padding: 1em 0;
+	max-width: 550px;
+}
+
+.answer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	margin: 0.8em 0;
+	background: lighten($colorResalte, 50%);
+	border-radius: 5px;
+	overflow: hidden;
+
+	h3{
+		display: block;
+		width: 90%;
+		background: $colorResalte;
+
+		font-size: 1.2em;
+		text-align: center;
+		color: #fff;
+		text-shadow: 2px 2px 10px #000;
+		padding: 0.6em 5%;
+	}
+
+	p {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+		text-align: justify;
+		padding: 0.4em 0;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+
+		margin: 0.5em 0;
+		color: #fff;
+		background: $colorBtn;
+		padding: 0.5em;
+		border-radius: 5px;
+	}
+}
