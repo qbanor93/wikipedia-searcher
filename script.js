@@ -36,7 +36,7 @@ $(document).ready(function() {
 
           let answer = "<div class='answer'><h3>";
           answer += result.query.search[i].title + "</h3>";
-          answer += "<p>" + result.query.search[i].snippet + "</p>";
+          answer += "<p>" + result.query.search[i].snippet + "...</p>";
           answer += "<a href='https://" + lang + ".wikipedia.org/wiki/" + result.query.search[i].title + "' target='_blank'>See more +</a>";
           answer += "</div>";
 
