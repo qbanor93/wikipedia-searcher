@@ -4,13 +4,34 @@ $(document).ready(function() {
 
   let lang = 'en';
 
+  // console.log(lang);
+
+  $('#random-btn').attr('href', 'https://' + lang + '.wikipedia.org/wiki/Special:Random');
+
+  function myRandom() {
+    var baseRandom = 'https://' + lang + '.wikipedia.org/wiki/Special:Random';
+    // console.log(baseRandom);
+    $('#random-btn').attr('href', baseRandom);
+  }
+
   $('#language-container li').on('click', function(){
     let langType = this.innerHTML;
     lang = langType.toLowerCase();
+
+    // console.log(lang);
+
+    myRandom();
+
     return lang;
   });
 
   // Main Function
+
+  // console.log(lang);
+
+  // var baseRandom = 'https://' + lang + '.wikipedia.org/wiki/Special:Random';
+  // console.log(baseRandom);
+  // $('#random-btn').attr('href', 'https://' + lang + '.wikipedia.org/wiki/Special:Random');
 
   function myAnswers() {
     $('#resulter').empty();
